@@ -3,9 +3,7 @@ SELECT name from Customer
 WHERE 
 referee_id != 2 or referee_id is null;
 
---POSTGRESQL
-
-'''
+/*
 584. Find Customer Referee
 Solved
 Easy
@@ -61,4 +59,4 @@ Output:
 | Bill |
 | Zack |
 +------+
-'''
+*/

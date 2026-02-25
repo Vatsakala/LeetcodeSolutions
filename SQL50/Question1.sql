@@ -8,8 +8,7 @@ SELECT product_id from Products
 WHERE
 low_fats = "Y" and recyclable = "Y";
 
---Question:
-'''
+/*
 1757. Recyclable and Low Fat Products
 Solved
 Easy
@@ -61,4 +60,4 @@ Output:
 | 3           |
 +-------------+
 Explanation: Only products 1 and 3 are both low fat and recyclable.
-'''
+*/

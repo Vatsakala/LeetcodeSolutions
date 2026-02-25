@@ -1,7 +1,7 @@
 -- Write your MySQL query statement below
 Select id, movie, description, rating from Cinema where id % 2 = 1 and description <> "Boring" order by rating DESC;
 
-'''
+/*
 620. Not Boring Movies
 Solved
 Easy
@@ -55,4 +55,4 @@ Output:
 +----+------------+-------------+--------+
 Explanation: 
 We have three movies with odd-numbered IDs: 1, 3, and 5. The movie with ID = 3 is boring so we do not include it in the answer.
-'''
+*/

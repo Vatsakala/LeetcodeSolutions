@@ -1,7 +1,7 @@
 -- Write your MySQL query statement below
 SELECT product_name, year, price FROM Product JOIN Sales on Product.product_id = Sales.product_id;
 
-'''
+/*
 1068. Product Sales Analysis I
 Solved
 Easy
@@ -78,4 +78,4 @@ Explanation:
 From sale_id = 1, we can conclude that Nokia was sold for 5000 in the year 2008.
 From sale_id = 2, we can conclude that Nokia was sold for 5000 in the year 2009.
 From sale_id = 7, we can conclude that Apple was sold for 9000 in the year 2011.
-'''
+*/

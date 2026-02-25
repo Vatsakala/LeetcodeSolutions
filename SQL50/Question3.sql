@@ -1,7 +1,7 @@
 --MYSQL
 SELECT Name, unique_id from Employees LEFT JOIN EmployeeUNI on Employees.id = EmployeeUNI.id
 
-'''
+/*
 1378. Replace Employee ID With The Unique Identifier
 Solved
 Easy
@@ -78,4 +78,4 @@ Alice and Bob do not have a unique ID, We will show null instead.
 The unique ID of Meir is 2.
 The unique ID of Winston is 3.
 The unique ID of Jonathan is 1.
-'''
+*/
