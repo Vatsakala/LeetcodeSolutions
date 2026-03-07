@@ -1,0 +1,71 @@
+/* DIFFERENCE BETWEEN WHERE AN HAVING CLAUSES IN SQL
+Because WHERE runs before the counting happens, and HAVING runs after the counting happens.
+SQL is evaluated in this order (simplified):
+FROM (get rows)
+WHERE (filter rows) ✅ row-by-row
+GROUP BY (make groups)
+COUNT/SUM/AVG... (compute aggregates per group)
+HAVING (filter groups) ✅ group-by-group
+SELECT
+*/
+
+--- Write your MySQL query statement below
+SELECT class FROM Courses 
+group by class
+having Count(Student) >= 5 ;
+
+/*
+596. Classes With at Least 5 Students
+Solved
+Easy
+Topics
+premium lock icon
+Companies
+SQL Schema
+Pandas Schema
+Table: Courses
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| student     | varchar |
+| class       | varchar |
++-------------+---------+
+(student, class) is the primary key (combination of columns with unique values) for this table.
+Each row of this table indicates the name of a student and the class in which they are enrolled.
+ 
+Write a solution to find all the classes that have at least five students.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+Example 1:
+
+Input: 
+Courses table:
++---------+----------+
+| student | class    |
++---------+----------+
+| A       | Math     |
+| B       | English  |
+| C       | Math     |
+| D       | Biology  |
+| E       | Math     |
+| F       | Computer |
+| G       | Math     |
+| H       | Math     |
+| I       | Math     |
++---------+----------+
+Output: 
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+Explanation: 
+- Math has 6 students, so we include it.
+- English has 1 student, so we do not include it.
+- Biology has 1 student, so we do not include it.
+- Computer has 1 student, so we do not include it.
+*/
