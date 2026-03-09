@@ -26,9 +26,6 @@ After SQL, I’ll shift into core DSA problem-solving and keep updating this rep
 - `SQL50/`  
   SQL solutions (Top SQL 50 + related practice)
 
-- *(Coming soon)* `DSA/`  
-  Topic-wise DSA solutions and patterns after I wrap up SQL
-
 - `README.md`  
   This overview + progress notes
 
