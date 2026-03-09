@@ -2,7 +2,7 @@
 
 This repo is my personal **LeetCode journey log** — a place where I store solutions, patterns, and notes as I improve step-by-step.
 
-Right now, I’m focused on **SQL** and I’ve been working through the **Top SQL 50** plan ).
+Right now, I’m focused on **SQL** and I’ve been working through the **Top SQL 50** plan.
 
 The goal is simple: **consistent practice + clean notes = faster learning**.
 
