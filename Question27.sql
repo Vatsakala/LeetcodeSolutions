@@ -6,15 +6,6 @@ GROUP BY num
 Having COUNT(num) = 1) as a;
 
 /*
-
-Code
-Code
-Code Sample
-
-
-Testcase
-Testcase
-Test Result
 619. Biggest Single Number
 Solved
 Easy
