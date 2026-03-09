@@ -2,7 +2,7 @@
 
 This repo is my personal **LeetCode journey log** — a place where I store solutions, patterns, and notes as I improve step-by-step.
 
-Right now, I’m focused on **SQL** and I’ve been working through the **Top SQL 50** plan (I’ve completed ~50 so far). Once I finish this phase, I’ll move into **DSA** (arrays, strings, hashing, two pointers, sliding window, stacks/queues, trees, graphs, DP, etc.) and keep adding solutions here.
+Right now, I’m focused on **SQL** and I’ve been working through the **Top SQL 50** plan ).
 
 The goal is simple: **consistent practice + clean notes = faster learning**.
 
