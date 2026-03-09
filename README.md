@@ -12,7 +12,6 @@ The goal is simple: **consistent practice + clean notes = faster learning**.
 
 ### 1) SQL (current)
 - Completed: ~50 SQL problems so far
-- Study plan link: https://leetcode.com/studyplan/top-sql-50/
 - **To solve the questions yourself:** https://leetcode.com/studyplan/top-sql-50/ (or `leetcode.com/sql50`)
 
 ### 2) DSA (next)
