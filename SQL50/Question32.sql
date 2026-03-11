@@ -17,6 +17,18 @@ FROM (
 ) t
 WHERE num = prev1
   AND num = prev2;
+
+--- Very interesting approach
+SELECT num AS ConsecutiveNums
+FROM (
+  SELECT
+    num,
+    ROW_NUMBER() OVER (ORDER BY id)
+    - ROW_NUMBER() OVER (PARTITION BY num ORDER BY id) AS grp
+  FROM Logs
+) t
+GROUP BY num, grp
+HAVING COUNT(*) >= 3;
 /*
 180. Consecutive Numbers
 Solved
