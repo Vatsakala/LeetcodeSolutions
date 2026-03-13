@@ -25,7 +25,7 @@ UNION ALL
 FROM Movies M
 JOIN MovieRating mr
 ON M.movie_id = mr.movie_id
-WHERE mr.created_at BETWEEN '2020-02-01' AND '2020-02-29'
+WHERE mr.created_at BETWEEN '2020-02-01' AND '2020-02-29' --Can also use LIKE '2020-02%'
 GROUP BY M.movie_id, M.title
 ORDER BY AVG(mr.rating) DESC, M.title ASC
 LIMIT 1);
