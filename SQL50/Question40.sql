@@ -1,4 +1,5 @@
---- WITH result_table AS 
+--- 
+WITH result_table AS 
 (
 SELECT R1.requester_id as id, count(R1.accepter_id) AS num
 FROM RequestAccepted R1
@@ -15,6 +16,22 @@ FROM result_table
 GROUP BY id ORDER BY num DESC
 LIMIT 1;
 
+
+--FASTER
+
+with cte as (
+select requester_id as id from RequestAccepted 
+union all
+select accepter_id as id from RequestAccepted
+)
+
+select 
+    id, 
+    count(*) num 
+from cte
+group by id
+order by count(*) desc
+limit 1
 /*
 602. Friend Requests II: Who Has the Most Friends
 Solved
