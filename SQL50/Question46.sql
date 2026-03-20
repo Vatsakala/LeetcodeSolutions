@@ -9,6 +9,12 @@ where id not in (
     ) temp
 );
 
+--Solution using join
+---# Write your MySQL query statement below
+DELETE P1 FROM Person P1 JOIN PERSON P2
+ON P1.email = P2.email
+and P1.id > P2.id
+
 /*
 196. Delete Duplicate Emails
 Solved
