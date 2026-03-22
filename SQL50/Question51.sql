@@ -3,6 +3,12 @@ SELECT P.firstName as 'firstName', P.lastName as 'lastName', COALESCE(A.city, Nu
 FROM Person P LEFT JOIN ADDRESS A
 ON P.personId = A.personId
 
+---This also works but the COALESCE is not necessary since LEFT JOIN will return NULL for missing values
+--- Write your MySQL query statement below
+SELECT P.firstName, P.lastName, A.city ,A.state
+FROM Person P LEFT JOIN ADDRESS A
+ON P.personId = A.personId
+
 /*
 175. Combine Two Tables
 Solved
