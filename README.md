@@ -11,13 +11,13 @@ The goal is simple: **consistent practice + clean notes = faster learning**.
 ## What I’m working on
 
 ### 1) SQL (current)
-- Completed: ~50 SQL problems so far
+- Completed: ~50 SQL problems so far and working on Database question list on Leetcode
 - **To solve the questions yourself:** https://leetcode.com/studyplan/top-sql-50/ (or `leetcode.com/sql50`)
 ---
 
 ## Repo structure
 
-- `SQL50/`  
+- `SQL50_&_Database/`  
   SQL solutions (Top SQL 50 + related practice)
 
 - `README.md`  
