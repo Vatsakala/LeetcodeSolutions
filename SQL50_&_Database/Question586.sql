@@ -5,6 +5,19 @@ GROUP BY customer_number
 ORDER BY COUNT(order_number) DESC
 LIMIT 1;
 
+--- CTE LOGI WHICH ALSO SUffieces second part 2ND PART
+WITH order_counts AS (
+    SELECT customer_number, COUNT(*) AS cnt
+    FROM Orders
+    GROUP BY customer_number
+),
+max_count AS (
+    SELECT MAX(cnt) AS mx
+    FROM order_counts
+)
+SELECT customer_number
+FROM order_counts
+WHERE cnt = (SELECT mx FROM max_count);
 
 /*
 586. Customer Placing the Largest Number of Orders
