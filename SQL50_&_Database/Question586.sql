@@ -5,7 +5,7 @@ GROUP BY customer_number
 ORDER BY COUNT(order_number) DESC
 LIMIT 1;
 
---- CTE LOGI WHICH ALSO SUffieces second part 2ND PART
+--- CTE LOGIC WHICH ALSO SUffieces second part 2ND PART
 WITH order_counts AS (
     SELECT customer_number, COUNT(*) AS cnt
     FROM Orders
