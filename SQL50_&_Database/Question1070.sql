@@ -8,7 +8,7 @@ SELECT S.product_id, S.year as first_year, S.quantity, S.price
 FROM Sales S JOIN min_year M
 ON S.product_id = M.product_id
 AND S.year = M.first_year
-
+ -- Either this or coorelated subquery
 /*
 1070. Product Sales Analysis III
 Solved
