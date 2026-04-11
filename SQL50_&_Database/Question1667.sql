@@ -1,6 +1,7 @@
 -- Write YOUR SQL query statement here
 SELECT user_id,  CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) as name
 FROM Users
+ORDER BY user_id ASC;
 -- CONCAT SUBSTRING TO BREAK STRINGS THEN UPPER LOWER TO CAPITAISE DECAPITALISE
 /*
 1667. Fix Names in a Table
