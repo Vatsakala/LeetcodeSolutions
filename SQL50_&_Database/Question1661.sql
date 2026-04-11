@@ -11,6 +11,7 @@ SELECT machine_id, ROUND(SUM(time_taken)/COUNT(process_id), 3) as processing_tim
 FROM time_taken_by_each_process
 GROUP BY machine_id
 
+-- WHEN WAS TO DO SUBSTRACTION BETWEN ROW, SELF JOIN SPLIT THEN CAN MINUS BETWEEN ROWS"
 /*
 1661. Average Time of Process per Machine
 Solved
