@@ -1,4 +1,4 @@
---- # Write your MySQL query statement below
+-- # Write your MySQL query statement below
 WITH distinct_user AS (
     SELECT DISTINCT (U1.user_id) FROM Useractivity U1 JOIN Useractivity U2
     ON U1.user_id = U2.user_id
