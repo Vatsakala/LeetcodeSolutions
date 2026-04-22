@@ -1,3 +1,17 @@
+-- MUCH SIMPLER SOLUTION
+WITH free_to_paid AS (
+    SELECT DISTINCT(U1.user_id) 
+    FROM UserActivity U1 JOIN UserActivity U2
+    ON U1.user_id = U2.user_id
+    AND U1.activity_type = 'free_trial' AND U2.activity_type = 'paid'
+)
+SELECT
+DISTINCT(user_id),
+ROUND(AVG(CASE WHEN activity_type = 'free_trial' THEN activity_duration END),2) as trial_avg_duration,
+ROUND(AVG(CASE WHEN activity_type = 'paid' THEN activity_duration END),2) as paid_avg_duration
+FROM UserActivity
+WHERE user_id IN (SELECT user_id FROM free_to_paid)
+
 -- # Write your MySQL query statement below
 WITH distinct_user AS (
     SELECT DISTINCT (U1.user_id) FROM Useractivity U1 JOIN Useractivity U2
