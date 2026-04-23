@@ -1,4 +1,4 @@
--- MUCH SIMPLER SOLUTION
+-- MUCH SIMPLER SOLUTION dotn require 2 threads
 WITH free_to_paid AS (
     SELECT DISTINCT(U1.user_id) 
     FROM UserActivity U1 JOIN UserActivity U2
