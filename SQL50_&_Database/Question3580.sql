@@ -1,18 +1,25 @@
 -- Write your MySQL query statement below
-# Write your MySQL query statement below
 WITH ranked_scores AS(
     SELECT 
     E.employee_id, E.name, P.rating, ROW_NUMBER() OVER (PARTITION BY P.employee_id ORDER BY P.review_date DESC) as review_order
     FROM employees E JOIN performance_reviews P
     ON E.employee_id = P.employee_id
+),
+ranked_table AS (
+    SELECT *, 
+    (SELECT rating from ranked_scores WHERE review_order = 1 and employee_id = R.employee_id) AS 1st,
+    (SELECT rating from ranked_scores WHERE review_order = 2 and employee_id = R.employee_id) AS 2nd,
+    (SELECT rating from ranked_scores WHERE review_order = 3 and employee_id = R.employee_id) AS 3rd
+    FROM ranked_scores R
+    GROUP BY employee_id, name
+
 )
-SELECT R.employee_id, name, 
-((SELECT rating from ranked_scores WHERE review_order = 1 and employee_id = R.employee_id) - ((SELECT rating from ranked_scores WHERE review_order = 3 and employee_id = R.employee_id))) as improvement_score
-FROM ranked_scores R  
-WHERE (SELECT rating from ranked_scores WHERE review_order = 1 and employee_id = R.employee_id) > (SELECT rating from ranked_scores WHERE review_order = 2 and employee_id = R.employee_id) 
-AND (SELECT rating from ranked_scores WHERE review_order = 2 and employee_id = R.employee_id) > (SELECT rating from ranked_scores WHERE review_order = 3 and employee_id = R.employee_id)
-GROUP BY employee_id, name
-ORDER BY improvement_score DESC, name ASC;
+SELECT employee_id, name, 1st - 3rd AS improvement_score
+FROM ranked_table
+WHERE 3rd IS NOT NULL
+AND 1st > 2nd
+AND 2nd > 3rd
+ORDER by improvement_score DESC, name ASC;
 
 /*
 3580. Find Consistently Improving Employees
