@@ -1,17 +1,22 @@
 -- # Write your MySQL query statement below
+# Write your MySQL query statement below
 WITH simple_table AS (
     select 
     customer_id, 
     COUNT(order_id) AS total_orders, 
-    SUM(CASE WHEN order_timestamp BETWEEN '11:00' AND '14:00' OR '18:00' AND '21:00' THEN 1 ELSE 0 END) as count_GH,
+    SUM(CASE WHEN TIME(order_timestamp) BETWEEN '11:00' AND '14:00' OR TIME(order_timestamp) BETWEEN '18:00' AND '21:00' THEN 1 ELSE 0 END) as count_GH,
     ROUND(AVG(order_rating), 2) AS average_rating,
     SUM(CASE WHEN order_rating IS NULL THEN 0 ELSE 1 END) as count_rated_order
     FROM restaurant_orders
     GROUP BY customer_id
+    HAVING (count_rated_order/total_orders) >= 0.5
 )
-SELECT customer_id, total_orders, (count_GH*100)/total_orders AS peak_hour_percentage, average_rating
+SELECT customer_id, total_orders, ROUND((count_GH*100.0)/total_orders, 0) AS peak_hour_percentage, average_rating
 FROM simple_table
-WHERE peak_hour_percentage > 60
+WHERE total_orders >= 3
+AND average_rating >= 4.0
+AND ROUND((count_GH*100.0)/total_orders, 0) >= 60
+ORDER BY average_rating DESC, customer_id DESC;
 /*
 3705. Find Golden Hour Customers
 Medium
