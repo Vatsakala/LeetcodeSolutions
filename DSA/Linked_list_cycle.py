@@ -7,12 +7,16 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if head is None:
+            return False
+    
         s, f = head, head
         while f and f.next:
+            assert s is not None
             s = s.next
             f = f.next.next
 
-            if (s == f):
+            if (s is f):
                 return True
         
         return False
