@@ -14,7 +14,7 @@ class Solution:
         head = inorder.index(postorder[-1])
 
         root.left = self.buildTree(inorder[:head], postorder[:head])
-        root. right =self.buildTree(inorder[head+1:], postorder[head:-1])
+        root.right =self.buildTree(inorder[head+1:], postorder[head:-1])
         
         return root
         
