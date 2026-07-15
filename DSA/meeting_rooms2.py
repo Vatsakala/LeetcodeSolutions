@@ -21,8 +21,8 @@ class Solution:
                 res = max(res, count)
             return res
 
-#one more solution more logical in interview is using min heap to track the end time and if the next meeting start time is greater than the min end time then pop the min end time and push the new end time into the heap. The size of the heap will be the number of meeting rooms required.
-import heapq
+#one more solution more logical in interview is using min heap to track the end time and if the next meeting start time is greater than the min end time then pop the min end time and push the new end time into the heap. The size of the heap will be the number of meeting rooms required. O(N LOG N) time complexity and O(N) space complexity.
+import heapq 
 class Solution2:
     def min_meeting_rooms(self, intervals: List[Interval]) -> int:
         if not intervals:
