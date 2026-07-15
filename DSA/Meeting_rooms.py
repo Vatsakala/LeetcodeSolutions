@@ -19,14 +19,14 @@ class Solution:
         # Write your code here
         intervals.sort(key = lambda i: i.start)
          # could be done like this aswell
-         """
+        """
          prev = intervals[0]
          for interval in intervals[1:]:
                 if prev.end > interval.start:
                     return False
                 prev = interval
             return True
-         """
+        """
         for i in range (1,len(intervals)):
             i1 = intervals[i - 1]
             i2 = intervals[i]
